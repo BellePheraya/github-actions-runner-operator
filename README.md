@@ -14,6 +14,9 @@ K8s operator for scheduling [GitHub Actions](https://github.com/features/actions
 [self-hosted-runners](https://help.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners)
 are a way to host your own runners and customize the environment used to run jobs in your GitHub Actions workflows.
 
+This will help with scalability. Currently Runners can only process 1 job per pod. So if there are N jobs there is a need of N runners (otherwise they would get queued). The operator will help detect that there are N jobs and spin up N runners, and then when those jobs are done then will get spun down.![image](https://user-images.githubusercontent.com/89955465/153341325-90453c6d-f466-4e52-b251-a382225a2218.png)
+
+
 This operator helps you scale and schedule runners on-demand in a declarative way.
 
 ## Configuration
